@@ -1,6 +1,7 @@
-use std::fs::File;
-use std::io::{self, BufRead};
+use std::io;
 use std::path::Path;
+
+use shared_lib::read_lines;
 
 fn main() -> io::Result<()> {
     let path = "puzzle_input.txt";
@@ -17,14 +18,6 @@ fn calculate_similarity_list(left_side: Vec<i32>, right_side: Vec<i32>) -> Vec<i
         .map(|left| left * right_side.iter().filter(|&&right| right == *left).count() as i32)
         .collect();
     return result;
-}
-
-fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-where
-    P: AsRef<Path>,
-{
-    let file = File::open(filename)?;
-    Ok(io::BufReader::new(file).lines())
 }
 
 fn read_sides<P>(filename: P) -> io::Result<(Vec<i32>, Vec<i32>)>

@@ -5,3 +5,10 @@ version = 4
 [[package]]
 name = "AoC-01"
 version = "0.1.0"
+dependencies = [
+ "shared_lib",
+]
+
+[[package]]
+name = "shared_lib"
+version = "0.1.0"
