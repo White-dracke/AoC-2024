@@ -1,0 +1,8 @@
+[package]
+name = "AoC-03"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shared_lib = { path = "../shared_lib" }
+regex = "1.4"
